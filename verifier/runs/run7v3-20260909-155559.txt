@@ -1,0 +1,44 @@
+PASS: vite publicDir points at bundle
+PASS: bundle brand asset: brand/logo-textured.png
+PASS: bundle brand asset: brand/logo-clean.png
+PASS: bundle brand asset: brand/logo-clean-640.png
+PASS: bundle sponsor: experience-gold-coast
+PASS: bundle sponsor: destroy-all-lines
+PASS: bundle sponsor: finders-keepers
+PASS: bundle sponsor: happen
+PASS: bundle real photo: maoli (>30KB)
+PASS: bundle real photo: stan-walker (>30KB)
+PASS: bundle real photo: katchafire (>30KB)
+PASS: bundle real photo: soja (>30KB)
+PASS: bundle real photo: arrested-development (>30KB)
+PASS: bundle real photo: bradamon (>30KB)
+PASS: bundle real photo: riah (>30KB)
+PASS: bundle placeholder: art
+PASS: bundle placeholder: local-comp
+PASS: bundle asset: admat-hero.jpg
+PASS: bundle asset: og-image.jpg
+PASS: bundle asset: fonts/BenzinExtraBold.ttf
+PASS: bundle asset: textures/halftone-grain.svg
+PASS: bundle asset: map-broadwater.svg
+PASS: bundle asset: decor/wave.svg
+PASS: bundle asset: decor/palm-frond.svg
+PASS: bundle asset: decor/monstera.svg
+PASS: bundle asset: decor/sun-disc.svg
+PASS: bundle asset: decor/palm-tree.svg
+PASS: navbar references /brand/logo-clean-640.png
+PASS: footer references /brand/logo-clean.png
+PASS: ADMAT referenced as /admat-hero.jpg
+PASS: artist photos referenced as /artists/
+PASS: Benzin @font-face references /fonts/
+PASS: dist logo
+PASS: dist sponsors
+PASS: dist real MAOLI photo
+PASS: dist ADMAT
+PASS: dist font
+PASS: dist og-image
+PASS: navbar links nowrap
+PASS: billing wall nowrap
+PASS: lineup hero word-atomic
+PASS: social: instagram.com/soundcollectivefest
+PASS: social: facebook.com/people/Sound-Collective-Fest/61590325646457
+PASS: social: tiktok.com/@soundcollectivefest
