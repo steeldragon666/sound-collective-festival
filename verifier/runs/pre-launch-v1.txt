@@ -1,0 +1,3 @@
+verifier/v1/check.sh: line 5: syntax error near unexpected token `$'}\r''
+verifier/v1/check.sh: line 5: `check(){ if eval "$2"; then echo "PASS: $1"; else echo "FAIL: $1"; fail=1; fi }
+'
