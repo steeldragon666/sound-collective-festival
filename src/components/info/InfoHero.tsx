@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { Fragment, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const META = ['SAT 20 FEB 2027', 'GATES 11AM', 'BROADWATER PARKLANDS', '18+', 'CASHLESS'];
@@ -52,12 +52,19 @@ export function InfoHero() {
           aria-label="EVENT INFO"
           className="display-poster text-[clamp(3.5rem,11vw,10rem)] leading-[0.88] tracking-[-0.01em]"
         >
-          {'EVENT INFO'.split('').map((ch, i) => (
-            <span key={i} className="inline-block overflow-hidden align-bottom" aria-hidden="true">
-              <motion.span variants={charVariant} className="inline-block whitespace-pre">
-                {ch}
-              </motion.span>
-            </span>
+          {'EVENT INFO'.split(' ').map((word, wi) => (
+            <Fragment key={word}>
+              {wi > 0 && ' '}
+              <span className="inline-block whitespace-nowrap">
+                {word.split('').map((ch, i) => (
+                  <span key={i} className="inline-block overflow-hidden align-bottom" aria-hidden="true">
+                    <motion.span variants={charVariant} className="inline-block whitespace-pre">
+                      {ch}
+                    </motion.span>
+                  </span>
+                ))}
+              </span>
+            </Fragment>
           ))}
         </motion.h1>
 

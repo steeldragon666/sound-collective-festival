@@ -14,9 +14,9 @@ interface BillingLine {
 const LINES: BillingLine[] = [
   { text: 'MAOLI', size: 'text-[clamp(3rem,9vw,7.5rem)]', style: 'poster' },
   { text: 'STAN WALKER', size: 'text-[clamp(2.2rem,6.5vw,5.4rem)]', style: 'hollow' },
-  { text: 'KATCHAFIRE · SOJA', size: 'text-[clamp(1.8rem,5.4vw,4.5rem)]', style: 'solid' },
-  { text: 'ARRESTED DEVELOPMENT', size: 'text-[clamp(1.6rem,4.7vw,3.9rem)]', style: 'hollow' },
-  { text: 'A.R.T · BRADAMON · RIAH', size: 'text-[clamp(1.35rem,4vw,3.4rem)]', style: 'solid' },
+  { text: 'KATCHAFIRE · SOJA', size: 'text-[clamp(1.55rem,5.4vw,4.5rem)]', style: 'solid' },
+  { text: 'ARRESTED DEVELOPMENT', size: 'text-[clamp(1.4rem,4.7vw,3.9rem)]', style: 'hollow' },
+  { text: 'A.R.T · BRADAMON · RIAH', size: 'text-[clamp(1.25rem,4vw,3.4rem)]', style: 'solid' },
   { text: '+ LOCAL COMP WINNER', size: 'text-[clamp(1.2rem,3.6vw,3rem)]', style: 'coral' },
 ];
 
@@ -56,7 +56,7 @@ export function LineupTeaser() {
                 to="/lineup"
                 onMouseEnter={() => setHovered(i)}
                 className={cn(
-                  'inline-block font-display uppercase leading-[0.95] tracking-[-0.01em] transition-all duration-300 hover:tracking-[0.02em]',
+                  'inline-block whitespace-nowrap font-display uppercase leading-[0.95] tracking-[-0.01em] transition-all duration-300 hover:tracking-[0.02em]',
                   line.size,
                   line.style === 'poster' && 'display-poster hover:text-coral',
                   line.style === 'hollow' && 'text-hollow-deep hover:text-coral hover:[-webkit-text-stroke:2px_var(--cream)] hover:drop-shadow-[4px_4px_0_#1E323E]',

@@ -26,19 +26,19 @@ const LINES: BillingLine[] = [
   {
     ids: ['katchafire', 'soja'],
     names: ['KATCHAFIRE', 'SOJA'],
-    sizeClass: 'text-[clamp(2rem,5.8vw,5.22rem)]',
+    sizeClass: 'text-[clamp(1.5rem,5.8vw,5.22rem)]',
     treatment: 'solid',
   },
   {
     ids: ['arrested-development'],
     names: ['ARRESTED DEVELOPMENT'],
-    sizeClass: 'text-[clamp(1.75rem,5vw,4.5rem)]',
+    sizeClass: 'text-[clamp(1.4rem,5vw,4.5rem)]',
     treatment: 'hollow',
   },
   {
     ids: ['art', 'bradamon', 'riah'],
     names: ['A.R.T', 'BRADAMON', 'RIAH'],
-    sizeClass: 'text-[clamp(1.47rem,4.2vw,3.78rem)]',
+    sizeClass: 'text-[clamp(1.15rem,4.2vw,3.78rem)]',
     treatment: 'solid',
   },
 ];
@@ -86,7 +86,7 @@ export function BillingWall({ onJump, onJumpToComp }: BillingWallProps) {
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.7, delay: lineIndex * 0.12, ease: 'easeOut' }}
             className={cn(
-              'font-display uppercase leading-[0.95] tracking-[-0.01em] transition-opacity duration-300 group-hover/wall:opacity-40 hover:!opacity-100',
+              'whitespace-nowrap font-display uppercase leading-[0.95] tracking-[-0.01em] transition-opacity duration-300 group-hover/wall:opacity-40 hover:!opacity-100',
               line.sizeClass,
             )}
           >
@@ -114,7 +114,7 @@ export function BillingWall({ onJump, onJumpToComp }: BillingWallProps) {
           whileInView={{ clipPath: 'inset(0 0% 0 0)' }}
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.7, delay: LINES.length * 0.12, ease: 'easeOut' }}
-          className="mt-2 font-display text-[clamp(1.33rem,3.8vw,3.42rem)] uppercase leading-[0.95] transition-opacity duration-300 group-hover/wall:opacity-40 hover:!opacity-100"
+          className="mt-2 whitespace-nowrap font-display text-[clamp(1.15rem,3.8vw,3.42rem)] uppercase leading-[0.95] transition-opacity duration-300 group-hover/wall:opacity-40 hover:!opacity-100"
         >
           <button
             type="button"
