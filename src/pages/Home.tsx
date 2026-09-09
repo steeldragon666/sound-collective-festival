@@ -5,12 +5,11 @@ import LineupTeaser from '@/components/home/LineupTeaser';
 import KeyFacts from '@/components/home/KeyFacts';
 import TicketsTeaser from '@/components/home/TicketsTeaser';
 import CompBanner from '@/components/home/CompBanner';
-import SponsorsStrip from '@/components/home/SponsorsStrip';
 
 /**
  * HOME — the landing page IS the ADMAT poster, brought to life.
  * Rhythm: sky (hero) → sky-deep (marquee/countdown) → cream (lineup)
- * → sand (facts) → sky (tickets) → coral (comp) → sky-deep (sponsors).
+ * → sand (facts) → sky (tickets) → coral (comp) → sky-deep (sponsor logos in footer).
  */
 export default function Home() {
   return (
@@ -22,7 +21,6 @@ export default function Home() {
       <KeyFacts />
       <TicketsTeaser />
       <CompBanner />
-      <SponsorsStrip />
     </>
   );
 }
