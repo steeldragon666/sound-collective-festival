@@ -1,18 +1,19 @@
 #!/bin/bash
-# Sound Collective site verifier v3 — uploaded asset bundle layout (github-assets-upload/public as publicDir)
+# Sound Collective site verifier v3 — assets live in the standard Vite public/ dir
 # Additive; v1/v2 still run. Run from repo root after `npm run build`: bash verifier/v3/check.sh
-# Why v3: the asset bundle reached GitHub nested one level deep (github-assets-upload/public).
-# vite.config.ts now points publicDir at it. v3 verifies the new layout + unchanged URL contract.
+# Why v3: the asset bundle reached GitHub nested one level deep (github-assets-upload/public),
+# which Vite does not serve. Assets now live in public/ (repo root) — v3 verifies the corrected
+# layout + unchanged URL contract.
 cd "$(dirname "$0")/../.."  # repo root
 fail=0
 check(){ if eval "$2"; then echo "PASS: $1"; else echo "FAIL: $1"; fail=1; fi }
 
-B=github-assets-upload/public
+B=public
 
-# 1. bundle dir wired as Vite publicDir
-check "vite publicDir points at bundle" "grep -q \"publicDir: 'github-assets-upload/public'\" vite.config.ts"
+# 1. vite config uses the default publicDir (no stray override)
+check "vite publicDir is default" "! grep -q 'publicDir' vite.config.ts"
 
-# 2. brand assets inside the bundle
+# 2. brand assets inside public/
 for p in brand/logo-textured.png brand/logo-clean.png brand/logo-clean-640.png; do
   check "bundle brand asset: $p" "[ -f $B/$p ]"
 done
