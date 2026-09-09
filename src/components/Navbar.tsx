@@ -76,11 +76,12 @@ export function Navbar() {
           scrolled ? 'border-b-2 border-cream/40 bg-sky-deep' : 'border-b-2 border-transparent bg-transparent',
         )}
       >
-        <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <img src="/decor/sun-disc.svg" alt="" className="h-7 w-7 object-cover object-bottom" />
-          <span className="font-display text-sm uppercase leading-none tracking-wide text-cream drop-shadow-[2px_2px_0_#1E323E] md:text-base">
-            Sound Collective
-          </span>
+        <Link to="/" className="flex shrink-0 items-center" onClick={() => setOpen(false)} aria-label="Sound Collective Festival — home">
+          <img
+            src="/brand/logo-clean-640.png"
+            alt="Sound Collective — Gold Coast"
+            className="h-11 w-auto drop-shadow-[2px_2px_0_rgba(30,50,62,0.6)] md:h-12"
+          />
         </Link>
 
         {/* Desktop links */}
@@ -91,7 +92,7 @@ export function Navbar() {
               to={link.to}
               className={({ isActive }) =>
                 cn(
-                  'group relative font-sans text-[0.85rem] font-bold uppercase tracking-[0.1em] text-cream',
+                  'group relative whitespace-nowrap font-sans text-[0.85rem] font-bold uppercase tracking-[0.1em] text-cream',
                   isActive && 'text-sunset',
                 )
               }
@@ -152,7 +153,7 @@ export function Navbar() {
                 <Link
                   to={link.to}
                   onClick={() => setOpen(false)}
-                  className="display-poster font-display text-4xl uppercase"
+                  className="display-poster whitespace-nowrap font-display text-4xl uppercase"
                 >
                   {link.label}
                 </Link>

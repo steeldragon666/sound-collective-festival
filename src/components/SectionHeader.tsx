@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -54,12 +55,19 @@ export function SectionHeader({ kicker, title, linkText, linkHref, variant = 'li
             variant === 'light' ? 'display-poster' : 'text-cream drop-shadow-[5px_5px_0_#1E323E]',
           )}
         >
-          {title.split('').map((ch, i) => (
-            <span key={i} className="inline-block overflow-hidden align-bottom" aria-hidden="true">
-              <motion.span variants={charVariant} className="inline-block whitespace-pre">
-                {ch}
-              </motion.span>
-            </span>
+          {title.split(' ').map((word, wi) => (
+            <Fragment key={`${word}-${wi}`}>
+              {wi > 0 && ' '}
+              <span className="inline-block whitespace-nowrap">
+                {word.split('').map((ch, i) => (
+                  <span key={i} className="inline-block overflow-hidden align-bottom" aria-hidden="true">
+                    <motion.span variants={charVariant} className="inline-block whitespace-pre">
+                      {ch}
+                    </motion.span>
+                  </span>
+                ))}
+              </span>
+            </Fragment>
           ))}
         </motion.h2>
       </div>

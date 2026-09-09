@@ -1,0 +1,51 @@
+PASS: dist/index.html built
+PASS: route /lineup wired
+PASS: route /tickets wired
+PASS: route /info wired
+PASS: route /faq wired
+PASS: lineup act: MAOLI
+PASS: lineup act: STAN WALKER
+PASS: lineup act: KATCHAFIRE
+PASS: lineup act: SOJA
+PASS: lineup act: ARRESTED DEVELOPMENT
+PASS: lineup act: A.R.T
+PASS: lineup act: BRADAMON
+PASS: lineup act: RIAH
+PASS: lineup act: LOCAL COMP
+PASS: fact: 20 February 2027\|20 FEB 2027
+PASS: fact: Broadwater Parklands
+PASS: fact: 169.90
+PASS: fact: 189.90
+PASS: fact: 209.90
+PASS: fact: 269.90
+PASS: fact: 17 September 2026\|17 SEP 2026
+PASS: fact: 18 September 2026\|18 SEP 2026
+PASS: fact: 18+
+PASS: fact: cashless
+PASS: fact: Megatix
+PASS: fact: Tixel
+PASS: fact: Ada Bell Way
+PASS: fact: Companion Card
+PASS: fact: soundcollectivefestival.com
+PASS: sponsor: EXPERIENCE GOLD COAST
+PASS: sponsor: DESTROY ALL LINES
+PASS: sponsor: FINDERS KEEPERS
+PASS: sponsor: HAPPEN
+PASS: asset: public/admat-hero.jpg
+PASS: asset: public/fonts/BenzinExtraBold.ttf
+PASS: asset: public/map-broadwater.svg
+PASS: asset: public/decor/wave.svg
+PASS: asset: public/decor/sun-disc.svg
+PASS: asset: public/textures/halftone-grain.svg
+PASS: asset: public/og-image.jpg
+PASS: artist img: maoli
+PASS: artist img: stan-walker
+PASS: artist img: katchafire
+PASS: artist img: soja
+PASS: artist img: arrested-development
+PASS: artist img: art
+PASS: artist img: bradamon
+PASS: artist img: riah
+PASS: artist img: local-comp
+PASS: vercel.json rewrite
+PASS: Benzin @font-face

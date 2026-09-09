@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { Fragment, useRef } from 'react';
 import { Link } from 'react-router';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 
@@ -69,12 +69,19 @@ export function LineupHero() {
             aria-label={TITLE}
             className="display-poster font-display text-[clamp(3.5rem,11vw,10rem)] uppercase leading-[0.88] tracking-[-0.01em]"
           >
-            {TITLE.split('').map((ch, i) => (
-              <span key={i} className="inline-block overflow-hidden align-bottom" aria-hidden="true">
-                <motion.span variants={charVariant} className="inline-block whitespace-pre">
-                  {ch}
-                </motion.span>
-              </span>
+            {TITLE.split(' ').map((word, wi) => (
+              <Fragment key={word}>
+                {wi > 0 && ' '}
+                <span className="inline-block whitespace-nowrap">
+                  {word.split('').map((ch, i) => (
+                    <span key={i} className="inline-block overflow-hidden align-bottom" aria-hidden="true">
+                      <motion.span variants={charVariant} className="inline-block whitespace-pre">
+                        {ch}
+                      </motion.span>
+                    </span>
+                  ))}
+                </span>
+              </Fragment>
             ))}
           </motion.h1>
         </div>

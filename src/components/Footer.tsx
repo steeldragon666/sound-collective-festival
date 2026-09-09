@@ -8,7 +8,12 @@ const SITE_LINKS = [
   { to: '/faq', label: 'FAQ' },
 ];
 
-const PARTNERS = ['Experience Gold Coast', 'Destroy All Lines', 'Finders Keepers Group', 'Happen'];
+const PARTNERS = [
+  { name: 'Experience Gold Coast', logo: '/brand/sponsors/experience-gold-coast.png' },
+  { name: 'Destroy All Lines', logo: '/brand/sponsors/destroy-all-lines.png' },
+  { name: 'Finders Keepers Group', logo: '/brand/sponsors/finders-keepers.png' },
+  { name: 'Happen', logo: '/brand/sponsors/happen.png' },
+];
 
 const SOCIALS = [
   { href: 'https://www.instagram.com/soundcollectivefest/', label: 'Instagram', Icon: Instagram },
@@ -25,11 +30,12 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-3 md:px-8">
         {/* Col 1: wordmark + meta */}
         <div>
-          <Link to="/" className="flex items-center gap-2.5">
-            <img src="/decor/sun-disc.svg" alt="" className="h-8 w-8 object-cover object-bottom" />
-            <span className="font-display text-lg uppercase leading-none tracking-wide">
-              Sound Collective
-            </span>
+          <Link to="/" className="inline-block" aria-label="Sound Collective Festival — home">
+            <img
+              src="/brand/logo-clean.png"
+              alt="Sound Collective — Gold Coast"
+              className="h-24 w-auto drop-shadow-[4px_4px_0_rgba(30,50,62,0.55)] md:h-28"
+            />
           </Link>
           <div className="mt-6 space-y-1.5 font-mono text-xs uppercase tracking-[0.15em] text-cream/70">
             <p>Sat 20 Feb 2027</p>
@@ -107,14 +113,12 @@ export function Footer() {
           <span className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-cream/50">
             Presented with
           </span>
-          {PARTNERS.map((partner, i) => (
-            <span key={partner} className="flex items-center gap-8">
-              <span className="font-sans text-sm font-bold uppercase tracking-[0.12em] text-cream/60 transition-all hover:-translate-y-0.5 hover:text-cream">
-                {partner}
-              </span>
-              {i < PARTNERS.length - 1 && (
-                <img src="/decor/palm-frond.svg" alt="" className="h-4 w-6 object-cover opacity-50" />
-              )}
+          {PARTNERS.map((partner) => (
+            <span
+              key={partner.name}
+              className="flex items-center rounded-sm border-2 border-ink bg-cream px-3 py-2 shadow-poster-sm transition-all hover:-translate-y-0.5"
+            >
+              <img src={partner.logo} alt={partner.name} className="h-5 w-auto md:h-6" />
             </span>
           ))}
         </div>

@@ -1,0 +1,39 @@
+PASS: official logo asset: public/brand/logo-textured.png
+PASS: official logo asset: public/brand/logo-clean.png
+PASS: official logo asset: public/brand/logo-clean-640.png
+PASS: navbar uses official logo
+PASS: footer uses official logo
+PASS: navbar wordmark text removed
+PASS: sponsor logo asset: experience-gold-coast
+PASS: sponsor logo wired: experience-gold-coast
+PASS: sponsor logo asset: destroy-all-lines
+PASS: sponsor logo wired: destroy-all-lines
+PASS: sponsor logo asset: finders-keepers
+PASS: sponsor logo wired: finders-keepers
+PASS: sponsor logo asset: happen
+PASS: sponsor logo wired: happen
+PASS: real photo: maoli.jpg (>30KB)
+PASS: real photo: stan-walker.jpg (>30KB)
+PASS: real photo: katchafire.jpg (>30KB)
+PASS: real photo: soja.jpg (>30KB)
+PASS: real photo: arrested-development.jpg (>30KB)
+PASS: real photo: bradamon.jpg (>30KB)
+PASS: real photo: riah.jpg (>30KB)
+PASS: placeholder img present: art
+PASS: placeholder img present: local-comp
+PASS: navbar links nowrap
+PASS: lineup teaser lines nowrap
+PASS: billing wall lines nowrap
+PASS: lineup hero word-atomic
+PASS: info hero word-atomic
+PASS: section header word-atomic
+PASS: home hero hollow lines nowrap
+PASS: teaser ARRESTED min lowered
+PASS: wall A.R.T line min lowered
+PASS: social: instagram.com/soundcollectivefest
+PASS: social: facebook.com/people/Sound-Collective-Fest/61590325646457
+PASS: social: tiktok.com/@soundcollectivefest
+PASS: dist has official logo
+PASS: dist has sponsor logos
+PASS: dist has real MAOLI photo
+PASS: dist ADMAT banner present
