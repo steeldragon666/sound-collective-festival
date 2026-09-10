@@ -65,13 +65,6 @@ function Tick({ index }: { index: number }) {
 export function AccessibilitySection() {
   return (
     <section id="accessibility" className="relative scroll-mt-[168px] overflow-hidden bg-sky-deep">
-      <img
-        src="/decor/monstera.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-14 bottom-6 w-[240px] select-none opacity-25 md:w-[320px]"
-      />
-
       <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-14 md:px-8 md:pb-28 md:pt-20">
         <SectionHeader kicker="05 — ACCESSIBILITY" title="EVERYONE'S WELCOME" variant="dark" />
 

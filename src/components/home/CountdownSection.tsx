@@ -33,12 +33,6 @@ export function CountdownSection() {
     <section className="relative bg-sky-deep">
       <div className="wave-strip animate-wave-drift" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-        {/* Rotating sun behind tiles */}
-        <img
-          src="/decor/sun-disc.svg"
-          alt=""
-          className="animate-spin-slow pointer-events-none absolute left-1/2 top-1/2 w-[420px] -translate-x-1/2 -translate-y-1/2 opacity-20"
-        />
         <div className="relative">
           <SectionHeader
             kicker="The Countdown"

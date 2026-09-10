@@ -226,13 +226,6 @@ export function EntryConditions() {
         }
       `}</style>
 
-      <img
-        src="/decor/palm-frond.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-16 top-10 w-[280px] select-none opacity-60 md:w-[380px]"
-      />
-
       <div className="relative mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
         <SectionHeader kicker="03 — CONDITIONS OF ENTRY" title="READ BEFORE YOU ROLL IN" />
 

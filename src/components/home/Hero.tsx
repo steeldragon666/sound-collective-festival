@@ -35,12 +35,7 @@ export function Hero() {
       // Load timeline
       const intro = gsap.timeline({ defaults: { ease: 'power3.out' } });
       intro
-        .fromTo(
-          '.hero-poster',
-          { scale: 0.9, rotate: -4, opacity: 0 },
-          { scale: 1, rotate: -1.5, opacity: 1, duration: 1, ease: 'back.out(1.4)' },
-          0.2,
-        )
+        .fromTo('.hero-poster', { scale: 0.9, rotate: -4, opacity: 0 }, { scale: 1, rotate: -1.5, opacity: 1, duration: 1, ease: 'back.out(1.4)' }, 0.2)
         .fromTo(
           '.hero-hollow-left .hero-char',
           { x: -80, opacity: 0 },
@@ -53,9 +48,6 @@ export function Hero() {
           { x: 0, opacity: 1, duration: 0.8, stagger: 0.04 },
           0.1,
         )
-        .fromTo('.hero-sun', { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2 }, 0.3)
-        .fromTo('.hero-palm-left', { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 1.1 }, 0.4)
-        .fromTo('.hero-palm-right', { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1.1 }, 0.4)
         .fromTo('.hero-ctas', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 0.9)
         .fromTo('.hero-cue', { opacity: 0 }, { opacity: 1, duration: 0.6 }, 1.2);
 
@@ -71,8 +63,6 @@ export function Hero() {
       scrollTl
         .to('.hero-poster', { y: -70 }, 0)
         .to('.hero-hollow', { y: 40 }, 0)
-        .to('.hero-sun', { y: -120, rotate: 15 }, 0)
-        .to('.hero-palm-left, .hero-palm-right', { y: 90 }, 0)
         .to('.hero-cue', { opacity: 0 }, 0);
     },
     { scope },
@@ -89,25 +79,6 @@ export function Hero() {
           <HollowLine text="COLLECTIVE" align="right" />
         </div>
       </div>
-
-      {/* Sun disc top-right */}
-      <img
-        src="/decor/sun-disc.svg"
-        alt=""
-        className="hero-sun pointer-events-none absolute -right-16 top-[8%] w-[300px] md:right-[4%] md:w-[500px]"
-      />
-
-      {/* Flanking palms */}
-      <img
-        src="/decor/palm-tree.svg"
-        alt=""
-        className="hero-palm-left pointer-events-none absolute -left-[8%] bottom-0 w-[38vw] max-w-[420px] opacity-90 md:w-[26vw]"
-      />
-      <img
-        src="/decor/palm-tree.svg"
-        alt=""
-        className="hero-palm-right pointer-events-none absolute -right-[8%] bottom-0 w-[38vw] max-w-[420px] -scale-x-100 opacity-90 md:w-[26vw]"
-      />
 
       {/* Poster frame */}
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-5 pb-24 pt-16">

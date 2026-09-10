@@ -14,7 +14,7 @@ for f in "20 February 2027\|20 FEB 2027" "Broadwater Parklands" "169.90" "189.90
 # 5. sponsors
 for s in "EXPERIENCE GOLD COAST" "DESTROY ALL LINES" "FINDERS KEEPERS" "HAPPEN"; do check "sponsor: $s" "grep -rqi -- \"$s\" src/"; done
 # 6. assets
-for p in public/admat-hero.jpg public/fonts/BenzinExtraBold.ttf public/map-broadwater.svg public/decor/wave.svg public/decor/sun-disc.svg public/textures/halftone-grain.svg public/og-image.jpg; do check "asset: $p" "[ -f $p ]"; done
+for p in public/admat-hero.jpg public/fonts/BenzinExtraBold.ttf public/map-broadwater.svg public/decor/wave.svg public/textures/halftone-grain.svg public/og-image.jpg; do check "asset: $p" "[ -f $p ]"; done
 for a in maoli stan-walker katchafire soja arrested-development art bradamon riah local-comp; do check "artist img: $a" "[ -f public/artists/$a.jpg ]"; done
 # 7. vercel SPA config
 check "vercel.json rewrite" "grep -q 'index.html' vercel.json"

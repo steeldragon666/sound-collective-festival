@@ -1,6 +1,6 @@
-import { Fragment, useRef } from 'react';
+import { Fragment } from 'react';
 import { Link } from 'react-router';
-import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const TITLE = 'THE LINEUP';
 
@@ -18,38 +18,10 @@ const charVariant = {
   },
 };
 
-/** S1 — Page hero: sky-deep, kicker + display-xl title, mini ADMAT thumbnail, parallax fronds. */
+/** S1 — Page hero: sky-deep, kicker + display-xl title, mini ADMAT thumbnail. */
 export function LineupHero() {
-  const ref = useRef<HTMLElement>(null);
-  const reduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end start'],
-  });
-  const frondLeftX = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : -80]);
-  const frondRightX = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 80]);
-
   return (
-    <section
-      ref={ref}
-      className="relative flex min-h-[60vh] items-center overflow-hidden bg-sky-deep"
-    >
-      {/* Parallax palm fronds arcing from both bottom corners */}
-      <motion.img
-        src="/decor/palm-frond.svg"
-        alt=""
-        aria-hidden="true"
-        style={{ x: frondLeftX }}
-        className="pointer-events-none absolute -bottom-10 -left-16 w-56 -rotate-12 opacity-80 md:w-80"
-      />
-      <motion.img
-        src="/decor/palm-frond.svg"
-        alt=""
-        aria-hidden="true"
-        style={{ x: frondRightX }}
-        className="pointer-events-none absolute -bottom-10 -right-16 w-56 -scale-x-100 rotate-12 opacity-80 md:w-80"
-      />
-
+    <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-sky-deep">
       <div className="mx-auto grid w-full max-w-7xl items-center gap-10 px-5 py-20 md:px-8 lg:grid-cols-[1fr_auto]">
         <div>
           <motion.p
@@ -58,7 +30,6 @@ export function LineupHero() {
             transition={{ duration: 0.5 }}
             className="mb-5 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-coral md:text-sm"
           >
-            <img src="/decor/sun-disc.svg" alt="" className="h-4 w-6 object-cover object-bottom" />
             ★ Saturday 20 February 2027 — Broadwater Parklands
           </motion.p>
 

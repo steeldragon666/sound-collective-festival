@@ -89,7 +89,6 @@
     .animate-marquee,
     .animate-marquee-slow,
     .animate-wave-drift,
-    .animate-spin-slow,
     .animate-pulse-soft {
       animation: none !important;
     }

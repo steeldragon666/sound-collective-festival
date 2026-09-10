@@ -40,7 +40,6 @@ export function SectionHeader({ kicker, title, linkText, linkHref, variant = 'li
           transition={{ duration: 0.5 }}
           className="mb-4 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-coral md:text-sm"
         >
-          <img src="/decor/sun-disc.svg" alt="" className="h-4 w-6 object-cover object-bottom" />
           ★ {kicker}
         </motion.p>
         <motion.h2

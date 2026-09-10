@@ -28,20 +28,6 @@ const EXTRAS = [
 export function TicketExtras() {
   return (
     <section className="relative overflow-hidden bg-cream">
-      {/* Corner fronds */}
-      <img
-        src="/decor/palm-frond.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-20 top-[-30px] w-[240px] rotate-[140deg] opacity-60"
-      />
-      <img
-        src="/decor/palm-frond.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-20 bottom-[-30px] w-[240px] -scale-x-100 rotate-[-30deg] opacity-60"
-      />
-
       <div className="relative mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
         <div className="grid gap-8 md:grid-cols-3">
           {EXTRAS.map((extra, i) => (

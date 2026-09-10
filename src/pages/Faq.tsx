@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useEffect, useMemo, useState } from 'react';
+import { motion } from 'framer-motion';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -22,30 +22,6 @@ const titleChar = {
     transition: { duration: 0.7, ease: [0.34, 1.56, 0.64, 1] as [number, number, number, number] },
   },
 };
-
-/** Monstera silhouettes drifting at the section edges, parallax y:-25. */
-function MonsteraEdges() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-  const y = useTransform(scrollYProgress, [0, 1], [25, -25]);
-
-  return (
-    <div ref={ref} aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-      <motion.img
-        src="/decor/monstera.svg"
-        alt=""
-        style={{ y }}
-        className="absolute -left-16 top-10 w-48 opacity-50 md:-left-10 md:w-64"
-      />
-      <motion.img
-        src="/decor/monstera.svg"
-        alt=""
-        style={{ y }}
-        className="absolute -right-16 bottom-10 w-48 -scale-x-100 opacity-50 md:-right-10 md:w-64"
-      />
-    </div>
-  );
-}
 
 export default function Faq() {
   const [query, setQuery] = useState('');
@@ -85,18 +61,12 @@ export default function Faq() {
     <div>
       {/* S1 — Page hero (sky-deep) */}
       <section className="relative flex min-h-[45vh] flex-col items-center justify-center overflow-hidden bg-sky-deep px-5 py-20 md:px-8">
-        <img
-          src="/decor/sun-disc.svg"
-          alt=""
-          className="pointer-events-none absolute -right-20 -top-10 w-64 opacity-40 md:w-80"
-        />
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mb-5 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-coral md:text-sm"
         >
-          <img src="/decor/sun-disc.svg" alt="" className="h-4 w-6 object-cover object-bottom" />
           ★ Got Questions?
         </motion.p>
         <motion.h1
@@ -128,8 +98,6 @@ export default function Faq() {
 
       {/* S2–S7 — FAQ body (cream) */}
       <section className="relative bg-cream">
-        <MonsteraEdges />
-
         <TabsPrimitive.Root value={activeTab} onValueChange={handleTabChange}>
           {/* Sticky tab bar under the navbar */}
           <div className="sticky top-[104px] z-40 border-b-[3px] border-ink bg-cream/95 backdrop-blur-sm md:top-[106px]">
@@ -167,7 +135,6 @@ export default function Faq() {
               >
                 {resultCount === 0 ? (
                   <div className="flex flex-col items-center gap-5 py-16 text-center">
-                    <img src="/decor/sun-disc.svg" alt="" className="h-16 w-28 object-cover object-bottom" />
                     <p className="font-sans text-lg font-bold text-ink">
                       No matches — try &ldquo;tickets&rdquo;, &ldquo;ID&rdquo;, or &ldquo;parking&rdquo;.
                     </p>
@@ -177,7 +144,6 @@ export default function Faq() {
                     {searchGroups.map((group) => (
                       <div key={group.tab.value}>
                         <p className="mb-5 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-coral">
-                          <img src="/decor/sun-disc.svg" alt="" className="h-3.5 w-5 object-cover object-bottom" />
                           {group.tab.label} — {group.items.length} {group.items.length === 1 ? 'match' : 'matches'}
                         </p>
                         <FaqAccordionList

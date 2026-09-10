@@ -24,7 +24,7 @@ function TickerContent() {
           <span className="mx-6 font-display text-sm md:text-base uppercase tracking-[0.04em] text-cream">
             {item}
           </span>
-          <img src="/decor/sun-disc.svg" alt="" className="h-4 w-7 shrink-0 object-cover object-bottom" />
+          <span className="mx-1 h-2 w-2 shrink-0 rounded-full bg-cream/80" aria-hidden="true" />
         </span>
       ))}
     </span>

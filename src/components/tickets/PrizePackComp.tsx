@@ -1,5 +1,4 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { MEGATIX_URL } from '@/components/TicketCard';
 
 const PRIZES = [
@@ -11,15 +10,8 @@ const PRIZES = [
 
 /** S5 — prize pack competition band on coral. */
 export function PrizePackComp() {
-  const scope = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: scope,
-    offset: ['start end', 'end start'],
-  });
-  const sunRotate = useTransform(scrollYProgress, [0, 1], [-15, 15]);
-
   return (
-    <section ref={scope} className="border-y-[3px] border-ink bg-coral">
+    <section className="border-y-[3px] border-ink bg-coral">
       <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
         <motion.div
           initial={{ opacity: 0, scale: 0.94 }}
@@ -28,19 +20,9 @@ export function PrizePackComp() {
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="relative overflow-hidden rounded-3xl border-[3px] border-ink bg-cream p-8 shadow-poster md:p-12"
         >
-          {/* Slowly rotating sun behind the panel */}
-          <motion.img
-            src="/decor/sun-disc.svg"
-            alt=""
-            aria-hidden="true"
-            style={{ rotate: sunRotate }}
-            className="pointer-events-none absolute -right-24 -top-16 w-[300px] opacity-90 md:w-[420px]"
-          />
-
           <div className="relative grid gap-10 md:grid-cols-2 md:items-center">
             <div>
               <p className="mb-3 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-coral md:text-sm">
-                <img src="/decor/sun-disc.svg" alt="" className="h-4 w-6 object-cover object-bottom" />
                 ★ Competition
               </p>
               <h2 className="font-display text-[clamp(2rem,5.5vw,4rem)] uppercase leading-[0.95] text-ink drop-shadow-[4px_4px_0_rgba(30,50,62,0.25)]">

@@ -89,14 +89,6 @@ export function LocalComp() {
 
   return (
     <section id="local-comp" className="relative scroll-mt-20 overflow-hidden bg-coral py-20 md:py-28">
-      {/* Sun disc behind the panel */}
-      <img
-        src="/decor/sun-disc.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-16 -top-8 w-72 rotate-12 opacity-90 md:w-96"
-      />
-
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <div className="rounded-3xl border-[3px] border-ink bg-cream p-8 shadow-poster-lg md:p-12">
           <motion.h2

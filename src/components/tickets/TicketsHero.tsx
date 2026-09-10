@@ -1,5 +1,4 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const TITLE = 'TICKETS';
 const SUBLINE = 'SAT 20 FEB 2027 · BROADWATER PARKLANDS · STRICTLY 18+ · CASHLESS';
@@ -28,45 +27,10 @@ const wordVariant = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
 };
 
-/** S1 — page hero on sky: char-split TICKETS title, subline, parallax decor. */
+/** S1 — page hero on sky: char-split TICKETS title, subline. */
 export function TicketsHero() {
-  const scope = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: scope,
-    offset: ['start start', 'end start'],
-  });
-  const sunY = useTransform(scrollYProgress, [0, 1], [0, -40]);
-  const frondLeftY = useTransform(scrollYProgress, [0, 1], [0, 40]);
-  const frondRightY = useTransform(scrollYProgress, [0, 1], [0, 55]);
-
   return (
-    <section
-      ref={scope}
-      className="relative flex min-h-[55dvh] flex-col items-center justify-center overflow-hidden bg-sky px-5 py-20 md:py-24"
-    >
-      {/* Floating decor */}
-      <motion.img
-        src="/decor/sun-disc.svg"
-        alt=""
-        aria-hidden="true"
-        style={{ y: sunY }}
-        className="pointer-events-none absolute -right-24 top-0 w-[280px] opacity-90 md:right-[6%] md:w-[420px]"
-      />
-      <motion.img
-        src="/decor/palm-frond.svg"
-        alt=""
-        aria-hidden="true"
-        style={{ y: frondLeftY }}
-        className="pointer-events-none absolute -left-16 bottom-[-40px] w-[260px] rotate-[20deg] opacity-90 md:left-[2%] md:w-[380px]"
-      />
-      <motion.img
-        src="/decor/palm-frond.svg"
-        alt=""
-        aria-hidden="true"
-        style={{ y: frondRightY }}
-        className="pointer-events-none absolute -right-20 bottom-[10%] w-[220px] -scale-x-100 rotate-[-14deg] opacity-80 md:w-[320px]"
-      />
-
+    <section className="relative flex min-h-[55dvh] flex-col items-center justify-center overflow-hidden bg-sky px-5 py-20 md:py-24">
       <div className="relative z-10 flex flex-col items-center text-center">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -74,7 +38,6 @@ export function TicketsHero() {
           transition={{ duration: 0.5 }}
           className="mb-5 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-ink md:text-sm"
         >
-          <img src="/decor/sun-disc.svg" alt="" className="h-4 w-6 object-cover object-bottom" />
           ★ Sound Collective — Gold Coast
         </motion.p>
 

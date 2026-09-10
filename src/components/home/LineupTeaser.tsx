@@ -26,16 +26,6 @@ export function LineupTeaser() {
 
   return (
     <section className="relative overflow-hidden bg-cream">
-      {/* Parallax palm frond top-left */}
-      <motion.img
-        src="/decor/palm-frond.svg"
-        alt=""
-        initial={{ y: 0 }}
-        whileInView={{ y: -40 }}
-        viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 1.2, ease: 'easeOut' }}
-        className="pointer-events-none absolute -left-24 -top-16 w-[340px] opacity-80 md:w-[460px]"
-      />
       <div className="relative mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
         <SectionHeader kicker="01 — THE LINEUP" title="ONE DAY. NINE ACTS." linkText="Full lineup" linkHref="/lineup" />
 

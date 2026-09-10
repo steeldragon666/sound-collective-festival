@@ -20,12 +20,7 @@ export function CompBanner() {
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="relative overflow-hidden rounded-3xl border-[3px] border-ink bg-cream p-8 shadow-poster md:p-12"
         >
-          {/* Sun peeking behind right corner */}
-          <img
-            src="/decor/sun-disc.svg"
-            alt=""
-            className="pointer-events-none absolute -right-20 -top-10 w-[280px] opacity-90 md:w-[360px]"
-          />
+          {/* Prize pack panel */}
           <div className="relative grid gap-10 md:grid-cols-2 md:items-center">
             <div>
               <h2 className="font-display text-[clamp(1.4rem,3vw,2.25rem)] uppercase leading-tight text-ink">

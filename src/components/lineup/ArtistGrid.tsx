@@ -77,9 +77,9 @@ function CompWinnerCard({ onJumpToComp }: CompWinnerCardProps) {
         Could be you
       </span>
 
-      {/* Spinning coral star badge */}
+      {/* Coral star badge */}
       <span className="absolute left-3 top-3 flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink bg-coral text-cream opacity-0 shadow-poster-sm transition-opacity duration-300 group-hover:opacity-100">
-        <span className="inline-block animate-spin-slow text-base leading-none">★</span>
+        <span className="text-base leading-none">★</span>
       </span>
 
       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/70 to-transparent px-4 pb-4 pt-14">

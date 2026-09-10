@@ -1,5 +1,5 @@
-import { Fragment, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { Fragment } from 'react';
+import { motion } from 'framer-motion';
 
 const META = ['SAT 20 FEB 2027', 'GATES 11AM', 'BROADWATER PARKLANDS', '18+', 'CASHLESS'];
 
@@ -17,23 +17,10 @@ const charVariant = {
   },
 };
 
-/** S1 — page hero on sky: kicker, display-xl title, meta chips, parallax monstera. */
+/** S1 — page hero on sky: kicker, display-xl title, meta chips. */
 export function InfoHero() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-  const monsteraY = useTransform(scrollYProgress, [0, 1], [0, -30]);
-
   return (
-    <section ref={ref} className="relative flex min-h-[50vh] flex-col justify-center overflow-hidden bg-sky">
-      {/* Monstera cluster, bottom-right, parallax drift */}
-      <motion.img
-        src="/decor/monstera.svg"
-        alt=""
-        aria-hidden="true"
-        style={{ y: monsteraY }}
-        className="pointer-events-none absolute -bottom-10 -right-8 w-[42vw] max-w-[340px] select-none opacity-90 md:right-[3%] md:w-[24vw]"
-      />
-
+    <section className="relative flex min-h-[50vh] flex-col justify-center overflow-hidden bg-sky">
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 py-20 md:px-8 md:py-24">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -41,7 +28,6 @@ export function InfoHero() {
           transition={{ duration: 0.5 }}
           className="mb-5 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-coral md:text-sm"
         >
-          <img src="/decor/sun-disc.svg" alt="" className="h-4 w-6 object-cover object-bottom" />
           ★ Everything you need to know
         </motion.p>
 

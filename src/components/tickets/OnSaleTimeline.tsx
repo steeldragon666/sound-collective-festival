@@ -50,16 +50,16 @@ export function OnSaleTimeline() {
             <ol className="relative grid gap-12 lg:grid-cols-2 lg:gap-8">
               {EVENTS.map((event, i) => (
                 <li key={event.label} className="flex gap-6 lg:flex-col lg:gap-0">
-                  {/* Sun-disc node */}
+                  {/* Timeline node */}
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true, amount: 0.8 }}
                     transition={{ delay: 0.3 + i * 0.2, duration: 0.5, type: 'spring', bounce: 0.5 }}
-                    className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full border-[3px] border-ink bg-coral shadow-poster-sm"
+                    className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-[3px] border-ink bg-coral shadow-poster-sm"
                     aria-hidden="true"
                   >
-                    <img src="/decor/sun-disc.svg" alt="" className="h-full w-full scale-[1.6] object-cover object-bottom" />
+                    <span className="font-display text-lg text-cream">{event.label[0]}</span>
                   </motion.div>
 
                   <motion.div
@@ -101,7 +101,6 @@ export function OnSaleTimeline() {
             className="rounded-2xl border-[3px] border-ink bg-sand p-6 shadow-poster"
           >
             <p className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-coral">
-              <img src="/decor/sun-disc.svg" alt="" className="h-4 w-6 object-cover object-bottom" />
               Good to know
             </p>
             <p className="mt-3 font-sans text-base leading-relaxed text-ink">

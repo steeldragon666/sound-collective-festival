@@ -27,9 +27,12 @@ for a in maoli stan-walker katchafire soja arrested-development bradamon riah; d
 done
 for a in art local-comp; do check "bundle placeholder: $a" "[ -f $B/artists/$a.jpg ]"; done
 
-# 4. core event assets
-for p in admat-hero.jpg og-image.jpg fonts/BenzinExtraBold.ttf textures/halftone-grain.svg map-broadwater.svg decor/wave.svg decor/palm-frond.svg decor/monstera.svg decor/sun-disc.svg decor/palm-tree.svg; do
+# 4. core event assets (wave decor retained; palm/frond/sun/monstera decor removed for brand fidelity)
+for p in admat-hero.jpg og-image.jpg fonts/BenzinExtraBold.ttf textures/halftone-grain.svg map-broadwater.svg decor/wave.svg; do
   check "bundle asset: $p" "[ -f $B/$p ]"
+done
+for p in decor/palm-frond.svg decor/monstera.svg decor/sun-disc.svg decor/palm-tree.svg; do
+  check "brand-consistent (no $p):" "[ ! -f $B/$p ]"
 done
 
 # 5. URL contract unchanged — source still references root-absolute asset URLs
