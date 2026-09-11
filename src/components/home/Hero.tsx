@@ -95,9 +95,6 @@ export function Hero() {
             fetchPriority="high"
           />
         </motion.div>
-        <p className="mt-5 font-mono text-[0.7rem] font-bold uppercase tracking-[0.18em] text-ink/70">
-          Official ADMAT — Sound Collective · Gold Coast
-        </p>
       </div>
 
       {/* Foreground CTA strip */}
